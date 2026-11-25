@@ -9,7 +9,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="04cce8ab9c405dc477a0672ce5a47dcc.jpg" />
+    <None Remove="4d93c82a9fa0a8fcd22c774bef0768bf.jpg" />
     <None Remove="61122.jpg" />
+    <None Remove="78f9de0480eafb2c6b133cb8c6f2ff62.jpg" />
+    <None Remove="7a6472d39b1d719f2603a4d0565d0fe1.jpg" />
     <None Remove="9fc1ce2c2f5e39f1b41d0efeee7f863a.jpg" />
   </ItemGroup>
 
@@ -18,7 +22,11 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="04cce8ab9c405dc477a0672ce5a47dcc.jpg" />
+    <Resource Include="4d93c82a9fa0a8fcd22c774bef0768bf.jpg" />
     <Resource Include="61122.jpg" />
+    <Resource Include="78f9de0480eafb2c6b133cb8c6f2ff62.jpg" />
+    <Resource Include="7a6472d39b1d719f2603a4d0565d0fe1.jpg" />
     <Resource Include="9fc1ce2c2f5e39f1b41d0efeee7f863a.jpg" />
   </ItemGroup>
 

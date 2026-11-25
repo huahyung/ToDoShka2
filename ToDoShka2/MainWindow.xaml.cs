@@ -27,7 +27,7 @@ namespace ToDoShka2
         static string dbname = "etocto";
         static string port = "3306";
         static string password = "vika_17092007";
-        public string ConnectionString = $"Server={serverName};Port={port};Database={dbname};User ID={userName};Password={password};SslMode=None;AllowPublicKeyRetrieval=True;";
+        public string ConnectionString = $"Server={serverName};Port={port};Database={dbname};User ID={userName};Password={password};AllowPublicKeyRetrieval=True;";
 
         private void enter_button_Click(object sender, RoutedEventArgs e)
         {
@@ -38,7 +38,7 @@ namespace ToDoShka2
 
 
 
-            string commandText2 = $"SELECT idUsers ,  Name, password, isadmin, firstlog FROM Users WHERE login='{log}' AND password = '{pw}';";
+            string commandText2 = $"SELECT idUsers ,  Name, password, isadmin, firstlog FROM Users WHERE name='{log}' AND password = '{pw}';";
 
             MySqlConnection connection = new MySqlConnection(ConnectionString);
 
@@ -51,24 +51,35 @@ namespace ToDoShka2
 
             if (dt.Rows.Count > 0)
             {
-                bool adm = (bool)dt.Rows[0]["isadmin"];
+                SByte adm = (SByte)dt.Rows[0]["isadmin"];
                 switch (adm)
                 {
-                    case true:
+                    case 1:
+                        Window1 window1 = new Window1();    
+                        window1.Show();
                         this.Hide();
                         connection.Close();
                         break;
 
-                    case false:
+                    case 0:
 
-                        bool firstLog =(bool)dt.Rows[0]["firstlog"];
-                        switch (adm)
+                        SByte firstLog =(SByte)dt.Rows[0]["firstlog"];
+                        switch (firstLog)
                         {
-                            case true:
-                                this.Show();
+                            case 1:
+                                Window2 window4 = new Window2();
+                                window4.Show();
+                                
+                                Window3 window3 = new Window3();
+                                window3.ShowDialog();
+                                
+                                
+                                this.Close();
                                 connection.Close();
                                 break;
-                            case false:
+                            case 0:
+                                Window2 window2 = new Window2();
+                                window2.Show();
                                 connection.Close();
                                 break;
                         }

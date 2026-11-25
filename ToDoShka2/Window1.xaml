@@ -1,0 +1,15 @@
+﻿<Window x:Class="ToDoShka2.Window1"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ToDoShka2"
+        mc:Ignorable="d"
+        Title="Админка" Height="269" Width="414">
+    <Window.Background>
+        <ImageBrush ImageSource="/7a6472d39b1d719f2603a4d0565d0fe1.jpg"/>
+    </Window.Background>
+    <Grid Margin="0,0,10,6">
+
+    </Grid>
+</Window>
