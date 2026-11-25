@@ -28,17 +28,17 @@
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
 
-            <Button x:Name="p1" Grid.Row="0" Grid.Column="0">
+            <Button x:Name="p1" Grid.Row="0" Grid.Column="0" Click="p1_Click">
                 <Button.Background>
                     <ImageBrush ImageSource="/4.png"/>
                 </Button.Background>
             </Button>
-            <Button x:Name="p2" Grid.Row="0" Grid.Column="1">
+            <Button x:Name="p2" Grid.Row="0" Grid.Column="1" Click="p2_Click">
                 <Button.Background>
                     <ImageBrush ImageSource="/3.png"/>
                 </Button.Background>
             </Button>
-            <Button x:Name="p3" Grid.Row="1" Grid.Column="0">
+            <Button x:Name="p3" Grid.Row="1" Grid.Column="0" Click="p3_Click">
                 <Button.Background>
                     <ImageBrush ImageSource="/2.png"/>
                 </Button.Background>

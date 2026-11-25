@@ -100,11 +100,23 @@ namespace ToDoShka2
        
         private void p4_Click_1(object sender, RoutedEventArgs e)
         {
-            Grid.SetRow(p3, 2);      
-            Grid.SetColumn(p3, 2);
-            Grid.SetRow(p4, 2);
-            Grid.SetColumn(p4, 1);
+            (p3.Background, p4.Background) = (p4.Background, p3.Background);
 
+        }
+
+        private void p3_Click(object sender, RoutedEventArgs e)
+        {
+            (p3.Background, p1.Background) = (p1.Background, p3.Background);
+        }
+
+        private void p1_Click(object sender, RoutedEventArgs e)
+        {
+            (p2.Background, p1.Background) = (p1.Background, p2.Background);
+        }
+
+        private void p2_Click(object sender, RoutedEventArgs e)
+        {
+            (p2.Background, p4.Background) = (p4.Background, p2.Background);
         }
     }
 }
