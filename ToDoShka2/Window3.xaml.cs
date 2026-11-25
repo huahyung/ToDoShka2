@@ -23,5 +23,10 @@ namespace ToDoShka2
         {
             InitializeComponent();
         }
+
+        private void change_button_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

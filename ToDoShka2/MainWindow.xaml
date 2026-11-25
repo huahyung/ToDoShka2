@@ -5,18 +5,50 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ToDoShka2"
         mc:Ignorable="d"
-        Title="Авторизация" Height="329" Width="484">
-    <Grid>
+        Title="Авторизация" Height="381" Width="632">
+    <Grid Margin="0,0,-48,-72">
         <Grid.Background>
             <ImageBrush ImageSource="/9fc1ce2c2f5e39f1b41d0efeee7f863a.jpg"/>
         </Grid.Background>
-        <Rectangle Stroke="Black" Fill="#FFE9B4B4" Margin="117,57,127,77"/>
+        <Rectangle Fill="#FFE9B4B4" Margin="147,65,179,105"/>
 
-        <TextBox x:Name="loginn" HorizontalAlignment="Center" Margin="0,96,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="192" Height="25"/>
-        <PasswordBox x:Name="passw"  HorizontalAlignment="Center" Margin="0,147,0,0"  VerticalAlignment="Top" Width="194" Height="24" />
-        <Button x:Name="enter_button" Content="Войти" HorizontalAlignment="Center" Margin="0,188,0,0" VerticalAlignment="Top" RenderTransformOrigin="4.561,4.496" Width="208" Click="enter_button_Click"/>
-        <Label Content="Password" HorizontalAlignment="Left" Margin="146,121,0,0" VerticalAlignment="Top"/>
-        <Label Content="Login" HorizontalAlignment="Left" Margin="146,70,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="loginn" HorizontalAlignment="Left" Margin="213,96,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="192" Height="25"/>
+        <PasswordBox x:Name="passw"  HorizontalAlignment="Left" Margin="210,148,0,0"  VerticalAlignment="Top" Width="194" Height="24" />
+        <Button x:Name="enter_button" Content="Войти" HorizontalAlignment="Left" Margin="213,294,0,0" VerticalAlignment="Top" RenderTransformOrigin="4.561,4.496" Width="208" Click="enter_button_Click"/>
+        <Label Content="Password" HorizontalAlignment="Left" Margin="213,126,0,0" VerticalAlignment="Top"/>
+        <Label Content="Label" HorizontalAlignment="Left" Margin="213,65,0,0" VerticalAlignment="Top"/>
+
+        <Grid Margin="227,177,290,160">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <Button x:Name="p1" Grid.Row="0" Grid.Column="0">
+                <Button.Background>
+                    <ImageBrush ImageSource="/4.png"/>
+                </Button.Background>
+            </Button>
+            <Button x:Name="p2" Grid.Row="0" Grid.Column="1">
+                <Button.Background>
+                    <ImageBrush ImageSource="/3.png"/>
+                </Button.Background>
+            </Button>
+            <Button x:Name="p3" Grid.Row="1" Grid.Column="0">
+                <Button.Background>
+                    <ImageBrush ImageSource="/2.png"/>
+                </Button.Background>
+            </Button>
+            <Button x:Name="p4" Grid.Row="1" Grid.Column="1" Click="p4_Click_1">
+                <Button.Background>
+                    <ImageBrush  ImageSource="/1.png"/>
+                </Button.Background>
+            </Button>
+        </Grid>
 
 
     </Grid>

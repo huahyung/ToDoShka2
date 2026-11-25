@@ -11,7 +11,7 @@
     </Window.Background>
     <Grid>
         <PasswordBox x:Name="passw"  HorizontalAlignment="Center" Margin="0,147,0,0"  VerticalAlignment="Top" Width="194" Height="24" />
-        <Button x:Name="change_button" Content="Изменить" HorizontalAlignment="Center" Margin="0,188,0,0" VerticalAlignment="Top" RenderTransformOrigin="4.561,4.496" Width="208"/>
+        <Button x:Name="change_button" Content="Изменить" HorizontalAlignment="Center" Margin="0,188,0,0" VerticalAlignment="Top" RenderTransformOrigin="4.561,4.496" Width="208" Click="change_button_Click"/>
         <Label Content="Password" HorizontalAlignment="Left" Margin="146,121,0,0" VerticalAlignment="Top"/>
         
 

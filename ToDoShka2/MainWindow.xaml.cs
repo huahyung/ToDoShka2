@@ -96,5 +96,15 @@ namespace ToDoShka2
             }
 
         }
+
+       
+        private void p4_Click_1(object sender, RoutedEventArgs e)
+        {
+            Grid.SetRow(p3, 2);      
+            Grid.SetColumn(p3, 2);
+            Grid.SetRow(p4, 2);
+            Grid.SetColumn(p4, 1);
+
+        }
     }
 }
