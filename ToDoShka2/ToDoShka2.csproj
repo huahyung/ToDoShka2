@@ -8,4 +8,18 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="61122.jpg" />
+    <None Remove="9fc1ce2c2f5e39f1b41d0efeee7f863a.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MySql.Data" Version="26.10.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="61122.jpg" />
+    <Resource Include="9fc1ce2c2f5e39f1b41d0efeee7f863a.jpg" />
+  </ItemGroup>
+
 </Project>
