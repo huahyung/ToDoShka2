@@ -41,7 +41,7 @@ namespace ToDoShka2
             int isadmin = Convert.ToInt16(isadmin2.Text);
             int isblockedx = Convert.ToInt16(isblocked.Text);
             int ida = Convert.ToInt16(id.Text);
-            string commandtext = $"update  USERS set idUsers ='{ida}', Name ='{namex}', password = '{passwordx}', isadmin = '{isadmin}', firstlog =  '{isblockedx}')";
+            string commandtext = $"update  USERS set  Name ='{namex}', password = '{passwordx}', isadmin = '{isadmin}', firstlog =  '{isblockedx}'  where idUsers ='{ida}'";
             
             try
             {
@@ -165,7 +165,7 @@ namespace ToDoShka2
 
         private void id_TextChanged(object sender, TextChangedEventArgs e)
         {
-            clear();
+            
         }
 
         private void gridofdata_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -183,5 +183,10 @@ namespace ToDoShka2
                        
                     }
             }
+
+        private void id_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            clear();
+        }
     }
 }

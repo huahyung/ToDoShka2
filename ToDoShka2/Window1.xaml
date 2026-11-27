@@ -17,6 +17,6 @@
         <TextBox x:Name="password2" HorizontalAlignment="Left" Margin="126,330,0,0" TextWrapping="Wrap" Text="Пароль" VerticalAlignment="Top" Width="120"/>
         <TextBox x:Name="isadmin2" HorizontalAlignment="Left" Margin="126,362,0,0" TextWrapping="Wrap" Text="Является ли админоМ (0-1)" VerticalAlignment="Top" Width="120"/>
         <TextBox x:Name="isblocked" HorizontalAlignment="Left" Margin="126,404,0,0" TextWrapping="Wrap" Text="Заблокирован ли (0-1)" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="id" HorizontalAlignment="Left" Margin="126,258,0,0" TextWrapping="Wrap" Text="ID" VerticalAlignment="Top" Width="120" TextChanged="id_TextChanged"/>
+        <TextBox x:Name="id" HorizontalAlignment="Left" Margin="126,258,0,0" TextWrapping="Wrap" Text="ID" VerticalAlignment="Top" Width="120" MouseDoubleClick="id_MouseDoubleClick"/>
     </Grid>
 </Window>
