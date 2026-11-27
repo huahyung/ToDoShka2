@@ -5,11 +5,18 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ToDoShka2"
         mc:Ignorable="d"
-        Title="Админка" Height="269" Width="414">
+        Title="Админка" Height="520" Width="644" Loaded="Window_Loaded" >
     <Window.Background>
         <ImageBrush ImageSource="/7a6472d39b1d719f2603a4d0565d0fe1.jpg"/>
     </Window.Background>
     <Grid Margin="0,0,10,6">
-
+        <DataGrid x:Name="gridofdata" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="88,107,88,249" SelectionChanged="gridofdata_SelectionChanged"/>
+        <Button x:Name="savebutton" Content="Сохранить" HorizontalAlignment="Left" Margin="446,323,0,0" VerticalAlignment="Top" Height="49" Width="100" Click="savebutton_Click"/>
+        <Button x:Name="changebutton" Content="Изменить" HorizontalAlignment="Left" Margin="446,417,0,0" VerticalAlignment="Top" Height="49" Width="100" Click="changebutton_Click"/>
+        <TextBox x:Name="name" HorizontalAlignment="Left" Margin="126,297,0,0" TextWrapping="Wrap" Text="Логин" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="password2" HorizontalAlignment="Left" Margin="126,330,0,0" TextWrapping="Wrap" Text="Пароль" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="isadmin2" HorizontalAlignment="Left" Margin="126,362,0,0" TextWrapping="Wrap" Text="Является ли админоМ (0-1)" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="isblocked" HorizontalAlignment="Left" Margin="126,404,0,0" TextWrapping="Wrap" Text="Заблокирован ли (0-1)" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="id" HorizontalAlignment="Left" Margin="126,258,0,0" TextWrapping="Wrap" Text="ID" VerticalAlignment="Top" Width="120" TextChanged="id_TextChanged"/>
     </Grid>
 </Window>

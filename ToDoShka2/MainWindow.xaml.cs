@@ -28,13 +28,13 @@ namespace ToDoShka2
         static string port = "3306";
         static string password = "vika_17092007";
         public string ConnectionString = $"Server={serverName};Port={port};Database={dbname};User ID={userName};Password={password};AllowPublicKeyRetrieval=True;";
-
+        int colvo = 0;
         private void enter_button_Click(object sender, RoutedEventArgs e)
         {
             string log = loginn.Text;
             string pw = passw.Password;
 
-
+            colvo++;
 
 
 
@@ -47,54 +47,81 @@ namespace ToDoShka2
             MySqlDataAdapter dataAdapter = new MySqlDataAdapter(commandText2, connection);
             DataTable dt = new DataTable();
             dataAdapter.Fill(dt);
-
-
-            if (dt.Rows.Count > 0)
+            SByte firstLog;
+            firstLog = (SByte)dt.Rows[0]["firstlog"];
+            if (p1.Background is ImageBrush b1 && b1.ImageSource.ToString().EndsWith("/1.png") &&
+                p2.Background is ImageBrush b2 && b2.ImageSource.ToString().EndsWith("/2.png") &&
+                p3.Background is ImageBrush b3 && b3.ImageSource.ToString().EndsWith("/3.png") &&
+                p4.Background is ImageBrush b4 && b4.ImageSource.ToString().EndsWith("/4.png"))
             {
-                SByte adm = (SByte)dt.Rows[0]["isadmin"];
-                switch (adm)
+                 
+                if (dt.Rows.Count > 0)
                 {
-                    case 1:
-                        Window1 window1 = new Window1();    
-                        window1.Show();
-                        this.Hide();
-                        connection.Close();
-                        break;
+                   
+                    SByte adm = (SByte)dt.Rows[0]["isadmin"];
+                    switch (adm)
+                    {
+                        case 1:
+                            Window1 window1 = new Window1();
+                            window1.Show();
+                            this.Hide();
+                            connection.Close();
+                            break;
 
-                    case 0:
+                        case 0:
 
-                        SByte firstLog =(SByte)dt.Rows[0]["firstlog"];
-                        switch (firstLog)
-                        {
-                            case 1:
-                                Window2 window4 = new Window2();
-                                window4.Show();
-                                
-                                Window3 window3 = new Window3();
-                                window3.ShowDialog();
-                                
-                                
-                                this.Close();
-                                connection.Close();
-                                break;
-                            case 0:
-                                Window2 window2 = new Window2();
-                                window2.Show();
-                                connection.Close();
-                                break;
-                        }
-                        connection.Close();
-                        this.Hide();
-                        break;
+                           
+                            switch (firstLog)
+                            {
+                                case 1:
+                                    MessageBox.Show("Вы заблокированы обратитесь к админу");
+                                    connection.Close();
+                                    break;
+                                case 0:
+                                    Window2 window2 = new Window2();
+                                    window2.Show();
+                                    connection.Close();
+                                    break;
+                            }
+                            connection.Close();
+                            this.Hide();
+                            break;
+                    }
+
                 }
-
+                else
+                {
+                    MessageBox.Show("Неверный логин или пароль.");
+                    connection.Close();
+                }
+                
             }
             else
             {
-                MessageBox.Show("Неверный логин или пароль.");
-                connection.Close();    
-            }
+                
+                
 
+                if (colvo < 3)
+                {
+                    MessageBox.Show("Вы робот.");
+                }
+                else if (colvo == 3)
+                {
+
+                    MessageBox.Show("Вы заблокированы обратитесь к админу");
+                    string commandText3 = $"Update users SET firstlog = '1'  WHERE name='{log}' AND password = '{pw}';";
+
+
+                    MySqlCommand command = new MySqlCommand(commandText3, connection);
+
+                    int rowsAffected = command.ExecuteNonQuery();
+
+
+                }
+                else if (firstLog == 1) {
+                    MessageBox.Show("Вы заблокированы обратитесь к админу");
+                }
+            }
         }
 
        
@@ -118,5 +145,7 @@ namespace ToDoShka2
         {
             (p2.Background, p4.Background) = (p4.Background, p2.Background);
         }
+
+        
     }
 }
